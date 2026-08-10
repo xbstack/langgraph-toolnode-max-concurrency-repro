@@ -63,8 +63,11 @@ A narrow parity change would replace the unconditional async gather with a bound
 - Tests: `tests/test_max_concurrency.py`
 - Upstream issue: `https://github.com/langchain-ai/langgraph/issues/8517`
 
-## XBSTACK article
+## XBSTACK articles
 
-The bilingual article URL is prepared as:
+For the full reproduction analysis, scope notes, and production workaround:
 
-`https://www.xbstack.com/ai/langgraph-toolnode-max-concurrency-ignored/?utm_source=github&utm_medium=referral&utm_campaign=langgraph_toolnode_max_concurrency&utm_content=repository_readme`
+- English: `https://www.xbstack.com/en/ai/langgraph-toolnode-max-concurrency-ignored/?utm_source=github&utm_medium=referral&utm_campaign=langgraph_toolnode_max_concurrency&utm_content=repository_readme`
+- 中文：`https://www.xbstack.com/ai/langgraph-toolnode-max-concurrency-ignored/?utm_source=github&utm_medium=referral&utm_campaign=langgraph_toolnode_max_concurrency&utm_content=repository_readme`
+
+Both pages document the same tested matrix and link back to upstream issue #8517.
