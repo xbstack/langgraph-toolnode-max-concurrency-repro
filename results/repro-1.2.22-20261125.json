@@ -1,0 +1,137 @@
+{
+  "date": "2026-11-25",
+  "python": "3.11.15",
+  "os": "macOS-27.0.1-arm64-arm-64bit",
+  "versions": {
+    "langgraph": "1.2.22",
+    "langgraph-prebuilt": "1.1.2",
+    "langchain-core": "1.5.3",
+    "langgraph-checkpoint": "4.3.2",
+    "langgraph-sdk": "0.4.14"
+  },
+  "scope": "four synthetic calls in one hand-built StateGraph ToolNode; async-only resource guard; no create_agent or real service test",
+  "source_async_gather": true,
+  "cases": [
+    {
+      "tool": "sync",
+      "entry": "invoke",
+      "limit": 1,
+      "guarded": false,
+      "peak": 1,
+      "outputs": 4,
+      "respected": true,
+      "elapsed_seconds": 0.259
+    },
+    {
+      "tool": "sync",
+      "entry": "ainvoke",
+      "limit": 1,
+      "guarded": false,
+      "peak": 4,
+      "outputs": 4,
+      "respected": false,
+      "elapsed_seconds": 0.0795
+    },
+    {
+      "tool": "async",
+      "entry": "ainvoke",
+      "limit": 1,
+      "guarded": false,
+      "peak": 4,
+      "outputs": 4,
+      "respected": false,
+      "elapsed_seconds": 0.0705
+    },
+    {
+      "tool": "async",
+      "entry": "ainvoke",
+      "limit": 1,
+      "guarded": true,
+      "peak": 1,
+      "outputs": 4,
+      "respected": true,
+      "elapsed_seconds": 0.2629
+    },
+    {
+      "tool": "sync",
+      "entry": "invoke",
+      "limit": 2,
+      "guarded": false,
+      "peak": 2,
+      "outputs": 4,
+      "respected": true,
+      "elapsed_seconds": 0.1371
+    },
+    {
+      "tool": "sync",
+      "entry": "ainvoke",
+      "limit": 2,
+      "guarded": false,
+      "peak": 4,
+      "outputs": 4,
+      "respected": false,
+      "elapsed_seconds": 0.0757
+    },
+    {
+      "tool": "async",
+      "entry": "ainvoke",
+      "limit": 2,
+      "guarded": false,
+      "peak": 4,
+      "outputs": 4,
+      "respected": false,
+      "elapsed_seconds": 0.0657
+    },
+    {
+      "tool": "async",
+      "entry": "ainvoke",
+      "limit": 2,
+      "guarded": true,
+      "peak": 2,
+      "outputs": 4,
+      "respected": true,
+      "elapsed_seconds": 0.1306
+    },
+    {
+      "tool": "sync",
+      "entry": "invoke",
+      "limit": 4,
+      "guarded": false,
+      "peak": 4,
+      "outputs": 4,
+      "respected": true,
+      "elapsed_seconds": 0.0752
+    },
+    {
+      "tool": "sync",
+      "entry": "ainvoke",
+      "limit": 4,
+      "guarded": false,
+      "peak": 4,
+      "outputs": 4,
+      "respected": true,
+      "elapsed_seconds": 0.07
+    },
+    {
+      "tool": "async",
+      "entry": "ainvoke",
+      "limit": 4,
+      "guarded": false,
+      "peak": 4,
+      "outputs": 4,
+      "respected": true,
+      "elapsed_seconds": 0.0662
+    },
+    {
+      "tool": "async",
+      "entry": "ainvoke",
+      "limit": 4,
+      "guarded": true,
+      "peak": 4,
+      "outputs": 4,
+      "respected": true,
+      "elapsed_seconds": 0.0668
+    }
+  ],
+  "assertions_passed": 12
+}
