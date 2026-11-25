@@ -2,7 +2,17 @@
 
 This repository-sized experiment reproduces a sync/async parity bug reported in LangGraph issue #8517.
 
-## Verified environment
+## November 25, 2026: independent 1.2.22 follow-up
+
+On macOS 27.0.1 arm64, Python 3.11.15, LangGraph 1.2.22, prebuilt 1.1.2 and core 1.5.3, the independent four-call matrix passed all 12 assertions. For caps 1/2/4, sync tools via `invoke` peaked at 1/2/4; both sync and async tools via `ainvoke` peaked at 4/4/4; the async-tool shared resource semaphore restored 1/2/4. All four result IDs and values were retained in every case. No real network, `create_agent` or thread cancellation test was performed. This confirms the specific single-ToolNode batch issue, not every agent scheduling architecture. See [machine-readable results](results/repro-1.2.22-20261125.json).
+
+```sh
+python3.11 -m venv .venv-1.2.22
+.venv-1.2.22/bin/python -m pip install -r requirements-1.2.22.txt
+.venv-1.2.22/bin/python repro_1_2_22.py
+```
+
+## Verified environment (original 1.2.10 study)
 
 - macOS 26.5.2, Apple Silicon
 - Python 3.11.15
